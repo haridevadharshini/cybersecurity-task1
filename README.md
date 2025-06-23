@@ -1,17 +1,25 @@
-# cybersecurity-task1
-# Network Reconnaissance with Nmap and Wireshark
+# Network Security Scan Analysis
 
-![Nmap Logo](https://nmap.org/images/sitelogo.png)
+## 🔍 Scan Overview
+| Parameter        | Value                     |
+|------------------|---------------------------|
+| Scan Type        | TCP SYN Stealth Scan (`-sS`) |
+| Target Network   | 192.168.37.0/24           |
+| Tool Version     | Nmap 7.95 (Kali Linux)    |
+| Scan Duration    | 8.55 seconds              |
+| Total Hosts Scanned | 256                     |
 
-A demonstration of basic network scanning techniques using Nmap to identify active hosts and open ports on a local network.
+## 📊 Findings Table
+| Host IP        | Status   | Open Ports | Filtered Ports | Closed Ports | Notable Services |
+|----------------|----------|------------|----------------|--------------|------------------|
+| 192.168.37.1   | Active   | 0          | 1000           | 0            | None             |
+| 192.168.37.2   | Active   | 0          | 1              | 999          | DNS (53/tcp)     |
+| 192.168.37.254 | Active   | 0          | 1000           | 0            | None             |
+| 192.168.37.128 | Active   | 0          | 0              | 1000         | None             |
 
-## Project Overview
-
-This repository contains results from a TCP SYN scan (`-sS`) performed on a local network (192.168.37.0/24) using Nmap on Kali Linux. 
-
-## Scan Details
-
-**Command Used:**
-```bash
-sudo nmap -sS 192.168.37.0/24 -oN scan_results.txt
-sudo wireshark
+## 🛡️ Security Assessment
+```text
+✅ All hosts properly firewalled  
+✅ Zero exposed services  
+✅ Only essential filtered services (DNS)  
+✅ No unexpected devices detected  
