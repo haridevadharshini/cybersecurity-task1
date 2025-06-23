@@ -19,4 +19,4 @@ Perform a TCP SYN scan on a local network using Nmap, capture traffic with Wires
 1. Identified my network IP range using `ip a`
 2. Ran a TCP SYN scan using:
    ```bash
-   sudo nmap -sS 192.168.1.0/24 -oN net_scan.txt
+   sudo nmap -sS 192.168.1.0/24 -oN network_scan.txt
