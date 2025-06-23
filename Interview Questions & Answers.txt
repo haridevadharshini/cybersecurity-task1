@@ -1,0 +1,103 @@
+Interview Questions & Answers
+
+1. What is an open port?
+An open port is a network port that accepts incoming connections from other devices. Each open port is typically associated with a specific service or application running on the device.
+
+2. How does Nmap perform a TCP SYN scan?
+A TCP SYN scan (half-open scan) works by:
+
+Sending a SYN packet to the target port
+
+If the port is open, the target responds with SYN-ACK
+
+Nmap immediately sends a RST (reset) packet to tear down the connection
+
+If the port is closed, the target responds with RST
+This method is stealthier than a full TCP connection scan.
+
+3. What risks are associated with open ports?
+Risks include:
+
+Potential entry points for attackers
+
+Exposure of vulnerable services
+
+Unauthorized access to systems
+
+Information leakage about running services
+
+Increased attack surface
+
+4. Explain the difference between TCP and UDP scanning.
+
+TCP scanning (like SYN scan) works with connection-oriented protocols where handshakes occur. UDP scanning is different because:
+
+UDP is connectionless
+
+No handshake occurs
+
+Nmap sends UDP packets and interprets responses (or lack thereof)
+
+Closed UDP ports often return ICMP port unreachable errors
+
+Open UDP ports typically don't respond
+
+5. How can open ports be secured?
+Methods to secure open ports:
+
+Close unnecessary ports
+
+Use firewalls to restrict access
+
+Implement strong authentication
+
+Keep services updated
+
+Use VPNs for remote access
+
+Implement port knocking
+
+Use intrusion detection/prevention systems
+
+6. What is a firewall's role regarding ports?
+A firewall:
+
+Controls incoming/outgoing network traffic
+
+Blocks or allows traffic based on port numbers
+
+Can restrict access to specific IP addresses
+
+Provides network segmentation
+
+Logs connection attempts
+
+Can detect and prevent port scanning
+
+7. What is a port scan and why do attackers perform it?
+A port scan is a method to determine which ports are open on a network device. Attackers use it to:
+
+Identify potential entry points
+
+Discover running services
+
+Find vulnerable versions of software
+
+Map network topology
+
+Plan attacks based on exposed services
+
+8. How does Wireshark complement port scanning?
+Wireshark complements port scanning by:
+
+Providing packet-level visibility of scan traffic
+
+Showing exact packet contents and timing
+
+Revealing how targets respond to different scan types
+
+Helping understand network behavior during scans
+
+Debugging scan issues
+
+Analyzing potential IDS/IPS responses
